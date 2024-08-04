@@ -1,0 +1,483 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+    <div class="page page-sticky-sidebar">
+      <div class="app-header" style="display: none; visibility: hidden;">
+        <nav class="bg-white navbar">
+          <ul class="navbar-nav">
+            <a href="/" class="navbar-brand">
+              <svg width="24" height="24">
+                <use xlink:href="#logo-icon"></use>
+              </svg>
+              <span class="ml-2">Eleven</span>
+            </a>
+          </ul>
+          <div class="search input-group d-none d-sm-flex">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <span class="animated-icon">
+                  <div
+                    style="width:20px;height:20px"
+                    data-animation-path="vendor/animated-icons/search-cancel/search-cancel.json"
+                  ></div>
+                </span>
+              </span>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="position-relative d-flex flex-row flex-fill page-wrapper">
+        <div
+          class="sidebar bg-dark page-sidebar"
+          style="transform:translateX(0);min-width:280px;max-width:280px"
+        >
+          <div class="h-100 d-flex flex-column flex-1">
+            <nav
+              class="navbar navbar-expand-md  d-none d-lg-flex d-xl-flex bg-dark"
+            >
+              <a href="#" class="navbar-brand">
+                <svg width="24" height="24">
+                  <use xlink:href="#logo-icon"></use>
+                </svg>
+                <span class="ml-3">Eleven</span>
+              </a>
+              <a href="javascript:;" class="nav-toggle">
+                <span class="animated-icon">
+                  <div
+                    style="width:24px;height:24px"
+                    data-animation-path="vendor/animated-icons/menu-back/menu-back.json"
+                    data-anim-loop="false"
+                  ></div>
+                </span>
+              </a>
+            </nav>
+            <ul class="d-block scroll-y flex-1 py-3 nav flex-column">
+              <div class="sidebar-item">
+                <li class="nav-item  active">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="{% url 'index' %}"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/shopping-bag/shopping-bag.json"
+                        data-anim-loop="false"></div>
+                    </span>
+                    <span class="mr-auto menu-name">Boshqaruv paneli</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="{% url 'contact' %}"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/shopping-bag/shopping-bag.json"
+                        data-anim-loop="false"></div>
+                    </span>
+                    <span class="mr-auto menu-name">Murojatlat</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="{% url 'banner' %}"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/shopping-bag/shopping-bag.json"
+                        data-anim-loop="false"></div>
+                    </span>
+                    <span class="mr-auto menu-name">Banner</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="{% url 'banner' %}"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/shopping-bag/shopping-bag.json"
+                        data-anim-loop="false"></div>
+                    </span>
+                    <span class="mr-auto menu-name">Info</span>
+                  </a>
+                </li>
+              </div>
+              <div class="sidebar-item">
+                <li class="nav-item ">
+                  <a
+                    class="nav-link d-flex align-items-center nav-link"
+                    href="{% url 'banner' %}"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/shopping-bag/shopping-bag.json"
+                        data-anim-loop="false"></div>
+                    </span>
+                    <span class="mr-auto menu-name">Cell</span>
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="page-overlay" style="visibility:hidden;opacity:0"></div>
+
+        <div
+          class="position-relative d-flex flex-column flex-fill page-content"
+          style="min-width:0"
+        >
+          <div class="app-header">
+            <nav class="bg-white navbar">
+              <ul class="navbar-nav d-lg-none d-sm-flex d-md-flex">
+                <a class="nav-toggle mobile-toggle">
+                  <span class="animated-icon">
+                    <div
+                      style="width:24px;height:24px"
+                      data-animation-path="vendor/animated-icons/menu-back/menu-back.json"
+                    ></div>
+                  </span>
+                </a>
+                <a href="/" class="navbar-brand">
+                  <svg width="24" height="24">
+                    <use xlink:href="#logo-icon"></use>
+                  </svg>
+                </a>
+              </ul>
+              <div class="search input-group d-none d-sm-flex">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <span class="animated-icon">
+                      <div
+                        style="width:20px;height:20px"
+                        data-animation-path="vendor/animated-icons/search-cancel/search-cancel.json"
+                      ></div>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <ul class="ml-auto menu-right navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link toggle-fullscreen" href="javascript:;">
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/fullscreen/fullscreen.json"
+                      ></div>
+                    </span>
+                  </a>
+                </li>
+                <li class="dropdown nav-item">
+                  <a
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    href="#"
+                    class="nav-link"
+                    aria-expanded="false"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/toggle/toggle.json"
+                      ></div>
+                    </span>
+                  </a>
+                  <div
+                    tabindex="-1"
+                    role="menu"
+                    aria-hidden="true"
+                    class="app-settings dropdown-menu dropdown-menu-right"
+                  >
+                    <span class="dropdown-item-text">Settings</span>
+                    <div tabindex="-1" class="m-0 dropdown-divider"></div>
+                    <button
+                      type="button"
+                      tabindex="0"
+                      role="menuitem"
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                    >
+                      <label for="darkModeOption" class="m-0">Dark mode</label>
+                      <div class="custom-switch custom-control">
+                        <input
+                          type="checkbox"
+                          id="darkModeOption"
+                          name="darkModeOption"
+                          class="custom-control-input"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="darkModeOption"
+                        ></label>
+                      </div>
+                    </button>
+                    <button
+                      type="button"
+                      tabindex="0"
+                      role="menuitem"
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                    >
+                      <label for="boxedOption" class="m-0">Boxed layout</label>
+                      <div class="custom-switch custom-control">
+                        <input
+                          type="checkbox"
+                          id="boxedOption"
+                          name="boxedOption"
+                          class="custom-control-input"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="boxedOption"
+                        ></label>
+                      </div>
+                    </button>
+                    <button
+                      type="button"
+                      tabindex="0"
+                      role="menuitem"
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                    >
+                      <label for="stickyHeaderOption" class="m-0"
+                        >Sticky header</label
+                      >
+                      <div class="custom-switch custom-control">
+                        <input
+                          type="checkbox"
+                          id="stickyHeaderOption"
+                          name="stickyHeaderOption"
+                          class="custom-control-input"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="stickyHeaderOption"
+                        ></label>
+                      </div>
+                    </button>
+                    <button
+                      type="button"
+                      tabindex="0"
+                      role="menuitem"
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                    >
+                      <label for="stickySidebarOption" class="m-0"
+                        >Sticky sidebar</label
+                      >
+                      <div class="custom-switch custom-control">
+                        <input
+                          type="checkbox"
+                          id="stickySidebarOption"
+                          name="stickySidebarOption"
+                          class="custom-control-input"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="stickySidebarOption"
+                        ></label>
+                      </div>
+                    </button>
+                    <button
+                      type="button"
+                      tabindex="0"
+                      role="menuitem"
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                    >
+                      <label for="collapsedSidebarOption" class="m-0"
+                        >Collapsed sidebar</label
+                      >
+                      <div class="custom-switch custom-control">
+                        <input
+                          type="checkbox"
+                          id="collapsedSidebarOption"
+                          name="collapsedSidebarOption"
+                          class="custom-control-input"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="collapsedSidebarOption"
+                        ></label>
+                      </div>
+                    </button>
+                    <button
+                      type="button"
+                      tabindex="0"
+                      role="menuitem"
+                      class="d-flex align-items-center justify-content-between dropdown-item"
+                    >
+                      <label for="topHeaderOption" class="m-0"
+                        >Top header</label
+                      >
+                      <div class="custom-switch custom-control">
+                        <input
+                          type="checkbox"
+                          id="topHeaderOption"
+                          name="topHeaderOption"
+                          class="custom-control-input"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="topHeaderOption"
+                        ></label>
+                      </div>
+                    </button>
+                  </div>
+                </li>
+                <li class="dropdown nav-item">
+                  <a
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    href="#"
+                    class="nav-link"
+                    aria-expanded="false"
+                  >
+                    <span class="animated-icon">
+                      <div
+                        style="width:18px;height:18px"
+                        data-animation-path="vendor/animated-icons/globe/globe.json"
+                      ></div>
+                    </span>
+                  </a>
+                </li>
+                {% if user.username %}
+                <li class="dropdown nav-item">
+                  <a
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    href="#"
+                    class="nav-link"
+                    aria-expanded="false">
+                    <span
+                      class="position-relative d-flex rounded-circle"
+                      style="width:90px;height:32px">
+                      <button class="btn btn-outline-primary">
+                        {{user.username}}
+                      </button>
+                    </span>
+
+                  </a>
+                  <div
+                    tabindex="-1"
+                    role="menu"
+                    aria-hidden="true"
+                    class="dropdown-menu dropdown-menu-right">
+                    <div tabindex="-1" class="dropdown-divider"></div>
+                    <button
+                      type="button"
+                      tabindex="0"
+                      role="menuitem"
+                      class="dropdown-item">
+                      <a href="{% url 'log_out' %}">chiqish</a>
+                    </button>
+                  </div>
+                </li>
+                {% else %}
+                <li>
+                  <a href="{% url 'login' %}">kirish</a>
+                </li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+          <div class="page-inner bg-light">
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body ">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto ">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            style=" width:22px;height:22px "
+                            data-animation-path="vendor/animated-icons/heart/heart.json"
+                            data-loop="false"
+                            data-auto-play="false"
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 ">{{ contact }}</h5>
+                      <h5 class="stat-widget-subtitle ">Murojatlat</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body ">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto ">
+                      <button
+                        type="button"
+                        class="btn btn-warning"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            style=" width:22px;height:22px "
+                            data-animation-path="vendor/animated-icons/activity/activity.json"
+                            data-loop="false"
+                            data-auto-play="false"
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 ">{{visible_counter}}</h5>
+                      <h5 class="stat-widget-subtitle ">Korilgan murojatlar</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-body ">
+                  <div class=" justify-content-start align-items-center row ">
+                    <div class="col-auto ">
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        style="padding: 0.1rem; border-radius: 50%; min-width: 32px; min-height: 32px;"
+                      >
+                        <span class="animated-icon">
+                          <div
+                            style=" width:22px;height:22px "
+                            data-animation-path="vendor/animated-icons/thumb/thumb.json"
+                            data-loop="false"
+                            data-auto-play="false"
+                          ></div>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <h5 class="stat-widget-title mb-0 fw-400 ">{{ no_visible }}</h5>
+                      <h5 class="stat-widget-subtitle ">Korilmagan murojatlar</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

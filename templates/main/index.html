@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+    <html lang="en">
+        {% load static %}
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Landkey - Responsive Landing Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
+        <meta name="keywords" content="bootstrap 4, premium, marketing, multipurpose" />
+        <meta content="Zoyothemes" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{% static 'main/images/favicon.ico' %}">
+        <!-- Bootstrap css -->
+        <link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- Icons -->
+        <link href="{% static 'main/css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css" />
+        <!-- Pe7 Icon -->
+        <link rel="stylesheet" type="text/css" href="css/pe-icon-7.css">
+        <!-- Icons -->
+        <link href="{% static 'main/css/magnific-popup.css' %}" rel="stylesheet" type="text/css" />
+        <!-- Main css File -->
+        <link href="{% static 'main/css/style.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'main/css/colors/default.css' %}" rel="stylesheet" id="color-opt">
+        
+    </head>
+
+    <body>
+        <!-- Navbar STart -->
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+                <!-- Logo container-->
+                <div>
+                    <a class="logo" href="{% url 'index' %}" target="_blank">
+                        <!-- Landkey -->
+                        Landkey
+                    </a>
+                </div>                 
+                <!-- End Logo container-->
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+        
+                <div id="navigation">
+                    <!-- Navigation Menu-->   
+                    <ul class="navigation-menu nav-light">
+                        <li class="has-submenu active">
+                            <a href="#home">Uy</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#service">Xizmatlar</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#contact">Bog'lanish</a>
+                        </li>
+                    </ul><!--end navigation menu-->
+                </div><!--end navigation-->
+            </div><!--end container-->
+        </header><!--end header-->
+        <!-- Navbar End -->
+
+        <!-- Start Home -->
+        <section class="bg-half-170 d-table w-100 border-bottom" style="background: url('images/bg/bg6.jpg') center center;" id="home">
+            <div class="bg-overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="home-title text-white text-center">
+                            <h1><i class="pe-7s-rocket"></i></h1>
+                            <h5 class="mb-2 text-uppercase">{{ banner.title }}</h5>
+                            <h1 class="display-4 letter-spacing mb-3 text-white font-weight-bold">{{ banner.sub_title }}</h1>
+                            <p class="mt-4 text-white-50 para-desc mx-auto">{{banner.body}}</p>
+                        </div>
+                    </div>
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- End Home -->
+        <!-- Services Start -->
+        <section class="section bg-light" id="service">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center mb-4 pb-2">
+                            <h4 class="title mb-4">Bizning xizmatlar</h4>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row">
+                    {% for cel in cell %}
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card service-wrapper rounded border-0 shadow px-4 py-5">
+                            <div class="{{cel.icon}}">
+                                <i class="{{cel.url}}"></i>
+                            </div>
+                            <div class="content mt-4">
+                                <h5 class="title">{{ cel.title }}</h5>
+                                <p class="text-muted mt-3 mb-0">{{ cel.info }}</p>
+                            </div>
+                            
+                        </div>
+                    </div><!--end col-->
+                    {% endfor %}
+                </div><!--end row-->
+            </div><!--end container-->
+            
+            <div class="container mt-100 mt-60">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="mr-lg-5">
+                            <img src="images/features/svg-1.svg" class="img-fluid" alt="">
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- Start Blog -->
+
+        <!-- Start COntact -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center mb-4 pb-2">
+                            <h4 class="title mb-4">Contact us</h4>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row">
+                    <div class="col-md-4 mt-4 pt-2">
+                        <div class="contact-detail text-center">
+                            <div class="icon">
+                                <i data-feather="phone" class="fea icon-md"></i>
+                            </div>
+                            <div class="content mt-4">
+                                <h6 class="title text-uppercase font-weight-bold">Nomer</h6>
+                                <a href="tel:+152534-468-854" class="text-primary">{{ info.phone }}</a>
+                            </div>  
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-md-4 mt-4 pt-2">
+                        <div class="contact-detail text-center">
+                            <div class="icon">
+                                <i data-feather="mail" class="fea icon-md"></i>
+                            </div>
+                            <div class="content mt-4">
+                                <h6 class="title text-uppercase font-weight-bold">Email</h6>
+                                <a href="mailto:contact@example.com" class="text-primary">{{ info.email }}</a>
+                            </div>  
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-md-4 mt-4 pt-2">
+                        <div class="contact-detail text-center">
+                            <div class="icon">
+                                <i data-feather="map-pin" class="fea icon-md"></i>
+                            </div>
+                            <div class="content mt-4">
+                                <h6 class="title text-uppercase font-weight-bold">Joylashuv</h6>
+                                <p class="text-muted">{{info.region}}</p>
+                                <a href="{{info.region_map}}" class="video-play-icon text-primary">Karta</a>
+                            </div>  
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9  col-lg-push-3">
+                        <div class="main-content">
+                            <div class="row"> 
+                                <div class="col-lg-6 ">
+                                    <form action="{% url 'create' %}" class="contact-form" method="post">
+                                        {% csrf_token %}
+                                        <!-- form-item -->
+                                        <div class="form-item">
+                                            <input class="form-control" type="text" name="name" id="Ism" placeholder="Ism"/>
+                                        </div><!-- End / form-item -->
+                                        
+                                        
+                                        
+                                        <!-- form-item -->
+                                        <div class="form-item">
+                                            <input class="form-control" type="text" name="phone" id="Telefon" placeholder="Telefon"/>
+                                        </div><!-- End / form-item -->
+                                        
+                                        
+                                        <!-- form-item -->
+                                        <div class="form-item">
+                                            <input class="form-control" type="text" name="subject" id="Mavzu" placeholder="Mavzu"/>
+                                        </div><!-- End / form-item -->
+                                        
+                                        
+                                        <!-- form-item -->
+                                        <div class="form-item">
+                                            <textarea name="text" id="text" placeholder="Xabar" style="height: 150px;"></textarea>
+                                        </div><!-- End / form-item -->
+                                        
+                                        <button class="btn btn-primary btn-round mb-30" type="submit">Yuborish</button>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6 ">
+                                    <div class="contact-gmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191885.73126917367!2d68.96752737418778!3d41.28243479015788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2z0KLQsNGI0LrQtdC90YIsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2sus!4v1720851010521!5m2!1sru!2sus" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3  col-lg-pull-9">
+                        <div class="sidebar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!--end section-->
+        <!-- End COntact -->
+
+        <!-- Start Footer -->
+        <footer class="bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-12">
+                        <a class="logo-footer text-white" href="#">
+                            Landkey
+                        </a>
+                        <p class="mt-4">Bizning ijtimoiy tarmoqlar</p>
+                        <ul class="list-unstyled social-icon social mb-0 mt-4">
+                            <li class="list-inline-item"><a href="{{link.facebook}}" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
+                            <li class="list-inline-item"><a href="{{link.instagram}}" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
+                            <li class="list-inline-item"><a href="{{link.twitter}}" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
+                        </ul><!--end icon-->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- Back to top -->
+        <a href="#" class="back-to-top rounded text-center" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up d-block"> </i>
+        </a>
+        <!-- Back to top -->
+        
+        <!-- javascript -->
+        <script src="{% static 'main/js/jquery.min.js' %}"></script>
+        <script src="{% static 'main/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'main/js/jquery.easing.min.js' %}"></script>
+        <script src="{% static 'main/js/scrollspy.min.js' %}"></script>
+        <!-- Magnific popup -->
+        <script src="{% static 'main/js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="js/magnific.init.js"></script>
+        <!-- Icons -->
+        <script src="https://unicons.iconscout.com/release/v2.1.5/script/monochrome/bundle.js"></script>
+        <script src="{% static 'main/js/feather.min.js' %}"></script>
+        <!-- Contact -->
+        <script src="{% static 'main/js/contact.js' %}"></script>
+        <!-- Main Js -->
+        <script src="{% static 'main/js/app.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="author" content="" />
+
+
+    <title>Home | Eleven Admin Template</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:900|Anonymous+Pro:400,700|Arimo:400,700"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'dashboard/css/app.css' %}" />
+
+    <script src="{% static 'dashboard/vendor/Chart.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'dashboard/css/styles.css' %}">
+  </head>
+  <body>
+    <svg width="24" height="24" viewBox="0 0 24 24" style="display:none">
+      <g
+        id="logo-icon"
+        stroke="currentColor"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        fill-rule="evenodd"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+        ></path>
+      </g>
+    </svg>
+ 
+{% block content %}
+
+{% endblock %}
+
+<script src="{% static 'dashboard/vendor/jquery-3.4.1.slim.min.js' %}"></script>
+<script src="{% static 'dashboard/vendor/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'dashboard/vendor/lottie.js' %}"></script>
+<script src="{% static 'dashboard/js/scripts.js' %}"></script>
+<script src="{% static 'dashboard/js/app.js' %}"></script>
+<script src="{% static 'dashboard/js/dashboard.js' %}"></script>
+</body>
+</html>
