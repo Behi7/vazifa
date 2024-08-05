@@ -64,8 +64,8 @@ def createbanner(request):
 
 def info(request):
     context = {}
-    info = models.Info.objects.all()
-    context['info']=info
+    infos = models.Info.objects.all()
+    context['infos']=infos
     return render(request, 'dashboard/infolist.html', context)
 
 def deleteinfo(request, id):
@@ -85,7 +85,7 @@ def createinfo(request):
 
 def cell(request):
     context = {}
-    cell = models.Banner.objects.all()
+    cell = models.Cell.objects.all()
     context['cell']=cell
     return render(request, 'dashboard/celllist.html', context)
 
@@ -97,9 +97,10 @@ def createcell(request):
     if request.method == "POST":
         models.Cell.objects.create(
             icon = request.POST['icon'],
-            url = request.POST['url'],
             title = request.POST['title'],
             info = request.POST['info']
         )
         return redirect('cell')
     return render(request, 'dashboard/createcell.html')
+
+

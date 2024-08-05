@@ -21,7 +21,6 @@ class Banner(models.Model):
 
 class Cell(models.Model):
     icon = models.TextField()
-    url = models.TextField()
     title = models.CharField(max_length=244)
     info = models.TextField()
 
@@ -38,4 +37,5 @@ class Link(models.Model):
     twitter= models.URLField(max_length=255)
     instagram = models.URLField(max_length=255)
     
+
 

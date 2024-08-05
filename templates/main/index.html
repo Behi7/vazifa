@@ -24,6 +24,7 @@
         <link href="{% static 'main/css/style.css' %}" rel="stylesheet" type="text/css" />
         <link href="{% static 'main/css/colors/default.css' %}" rel="stylesheet" id="color-opt">
         
+        
     </head>
 
     <body>
@@ -102,8 +103,8 @@
                     {% for cel in cell %}
                     <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                         <div class="card service-wrapper rounded border-0 shadow px-4 py-5">
-                            <div class="{{cel.icon}}">
-                                <i class="{{cel.url}}"></i>
+                            <div class="icon text-center text-primary h1 shadow rounded bg-white">
+                                <i class="{{cel.icon}}"></i>
                             </div>
                             <div class="content mt-4">
                                 <h5 class="title">{{ cel.title }}</h5>
@@ -270,5 +271,6 @@
         <script src="{% static 'main/js/contact.js' %}"></script>
         <!-- Main Js -->
         <script src="{% static 'main/js/app.js' %}"></script>
+        <script src="https://kit.fontawesome.com/47ba4aebdc.js" crossorigin="anonymous"></script>
     </body>
 </html>
