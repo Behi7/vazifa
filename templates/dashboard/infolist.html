@@ -118,11 +118,63 @@
       class="position-relative d-flex flex-column flex-fill page-content"
       style="min-width:0"
     >
+    <div class="app-header">
+      <nav class="bg-white navbar">
+        <ul class="ml-auto menu-right navbar-nav">
+          {% if user.username %}
+          <li class="dropdown nav-item">
+            <a
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              href="#"
+              class="nav-link"
+              aria-expanded="false"> 
+              <span
+                class="position-relative d-flex rounded-circle"
+                style="width:90px;height:32px">
+                <button class="btn btn-outline-primary">
+                  {{user.username}}
+                </button>
+              </span>
 
+            </a>
+            <div
+              tabindex="-1"
+              role="menu"
+              aria-hidden="true"
+              class="dropdown-menu dropdown-menu-right">
+              <a href="{% url 'log_out' %}">
+              <button
+                type="button"
+                tabindex="0"
+                role="menuitem"
+                class="dropdown-item">
+                chiqish
+              </button>
+            </a>
+            </div>
+          </li>
+          {% else %}
+          <li>
+            <span
+            class="position-relative d-flex rounded-circle"
+            style="width:90px;height:32px">
+            <a href="{% url 'login' %}">
+            <button class="btn btn-outline-primary">
+              kirish
+            </button>
+          </a>
+          </span>
+            
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
       <div class="page-inner bg-light ">
         <div class="mb-3 card">
           <div class="card-header">malumotlar</div>
-          <button class="btn btn-success"><a href="{% url 'createinfo' %}">qoshish</a></button>
+          <a href="{% url 'createinfo' %}"><button class="btn btn-success">qoshish</button></a>
           <table class="table">
             <thead>
               <tr>
@@ -140,7 +192,7 @@
                 <td>{{ info.phone }}</td>
                 <td>{{ info.email }}</td>
                 <td>{{ info.region }}</td>
-                <td><a href="{% url 'deleteinfo' info.id %}">ochirish</a></td>
+                <td><a href="{% url 'deleteinfo' info.id %}"><button class="btn btn-danger">O'chirish</button></a></td>
               </tr>
               {% endfor %}
             </tbody>

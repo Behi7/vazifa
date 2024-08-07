@@ -25,6 +25,7 @@
                         <label class="">xizmat</label>
                         <input
                           class="form-control"
+                          value="{{cell.title}}"
                           id="exampleEmail"
                           name="title"
                           placeholder="xizmat"
@@ -36,20 +37,22 @@
                         <label class="" >xizmat malumoti</label>
                         <input
                           class="form-control"
+                          value="{{cell.info}}"
                           id="examplePassword"
                           name="info"
                           placeholder="malumoti"
                         />
                       </div>
                       <div class="form-group">
-                        <label class="" for="exampleText">belgisi</label>
-                        <textarea
-                          class="form-control"
-                          id="exampleText"
-                          name="icon"
-                        ></textarea>
+                        <label class="">belgisi</label>
+                        <input class="form-control"
+                        name="icon" value="{{cell.icon}}">
                       </div>
-                      <button class="btn btn-secondary" type="submit">qoshish</button>
+                      {% if cell.title %}
+                      <button class="btn btn-secondary" type="submit">Yangilash</button>
+                      {% else %}
+                      <button class="btn btn-secondary" type="submit">Qoshish</button>
+                      {% endif %}
                     </form>
                   </div>
                 </div>

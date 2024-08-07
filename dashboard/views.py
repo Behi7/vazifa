@@ -4,15 +4,18 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 def index(request):
-    contacts = models.Contact.objects.all()
-    counter = len(contacts)
-    visible_contact = sum(1 for contact in contacts if contact.is_show==True)
-    no_visible_c = counter - visible_contact
-    context = {
-        'contact':counter,
-        'visible_counter':visible_contact,
-        'no_visible':no_visible_c,
-    }
+    if not request.user.is_authenticated:
+        return redirect('login')
+    else:
+        contacts = models.Contact.objects.all()
+        counter = len(contacts)
+        visible_contact = sum(1 for contact in contacts if contact.is_show==True)
+        no_visible_c = counter - visible_contact
+        context = {
+            'contact':counter,
+            'visible_counter':visible_contact,
+            'no_visible':no_visible_c,
+        }
     return render(request, 'dashboard/index.html', context)
 
 def contactList(request):
@@ -35,7 +38,7 @@ def login_user(request):
             login(request, user)
             return redirect('index')
         else:
-            return redirect('error')
+            return redirect('login')
     return render(request, 'dashboard/signin.html')
 
 def log_out(request):
@@ -103,4 +106,14 @@ def createcell(request):
         return redirect('cell')
     return render(request, 'dashboard/createcell.html')
 
-
+def updatecell(request, id):
+    context = {}
+    cell = models.Cell.objects.get(id = id)
+    context['cell'] = cell
+    if request.method == 'POST':
+        cell.icon = request.POST['icon']
+        cell.title = request.POST['title']
+        cell.info = request.POST['info']
+        cell.save()
+        return redirect('cell')
+    return render(request, 'dashboard/createcell.html', context)
