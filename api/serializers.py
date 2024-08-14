@@ -6,6 +6,13 @@ class ContactSerializer(serializers.ModelSerializer):
         model = Contact
         fields = '__all__' 
 
+
+class ContactObjSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = ['id', 'full_name']
+
+
 class BannerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Banner

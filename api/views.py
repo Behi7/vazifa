@@ -1,53 +1,46 @@
 from rest_framework import viewsets
-from .serializers import ContactSerializer, BannerSerializer, InfoSerializer, CellSerializer
+from .serializers import ContactSerializer, BannerSerializer, InfoSerializer, CellSerializer, ContactObjSerializer
 from main.models import Banner, Contact, Cell, Info
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, generics
 
-class ContactList(viewsets.ModelViewSet):
+
+class ContactObjView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 
 
-class ContactDetail(APIView):
-    def get(self, request, pk):
-        contact = Contact.objects.get(pk=pk)
-        serializer = ContactSerializer(contact)
-        return Response(serializer.data)
+class ContactView(generics.ListCreateAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactObjSerializer
+    
 
-
-class BannerList(viewsets.ModelViewSet): 
+class BannerObjView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Banner.objects.all()
     serializer_class = BannerSerializer
 
 
-class BannerDetail(APIView):
-    def get(self, request, pk):
-        contact = Banner.objects.get(pk=pk)
-        serializer = BannerSerializer(contact)
-        return Response(serializer.data)
+class BannerView(generics.ListCreateAPIView):
+    queryset = Banner.objects.all()
+    serializer_class = BannerSerializer
 
-
-class InfoList(viewsets.ModelViewSet):
+    
+class InfoObjView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Info.objects.all()
     serializer_class = InfoSerializer
 
 
-class InfoDetail(APIView):
-    def get(self, request, pk):
-        contact = Info.objects.get(pk=pk)
-        serializer = InfoSerializer(contact)
-        return Response(serializer.data)
+class InfoView(generics.ListCreateAPIView):
+    queryset = Info.objects.all()
+    serializer_class = InfoSerializer
 
 
-class CellList(viewsets.ModelViewSet):
+class CellObjView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Cell.objects.all()
     serializer_class = CellSerializer
 
 
-class CellDetail(APIView):
-    def get(self, request, pk):
-        contact = Cell.objects.get(pk=pk)
-        serializer = CellSerializer(contact)
-        return Response(serializer.data)
+class CellView(generics.ListCreateAPIView):
+    queryset = Cell.objects.all()
+    serializer_class = CellSerializer

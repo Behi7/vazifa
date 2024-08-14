@@ -8,15 +8,15 @@
 #     path('murojatlar', views.contactList, name='contact'),
 # ]
 from django.urls import path
-from .views import ContactList, BannerList, InfoList, CellList, ContactDetail, BannerDetail, InfoDetail, CellDetail
+from . import views
 
 urlpatterns = [
-    path('contacts/', ContactList.as_view({'get': 'list'})),
-    path('banners/', BannerList.as_view({'get': 'list'})),
-    path('info/', InfoList.as_view({'get': 'list'})),
-    path('cell/', CellList.as_view({'get': 'list'})),
-    path('contacts/<int:pk>', ContactDetail.as_view()),
-    path('banners/<int:pk>', BannerDetail.as_view()),
-    path('info/<int:pk>', InfoDetail.as_view()),
-    path('cell/<int:pk>', CellDetail.as_view())
+    path('contact', views.ContactView.as_view()),
+    path('contact/<int:pk>/', views.ContactObjView.as_view()),
+    path('banner', views.BannerView.as_view()),
+    path('banner/<int:pk>/', views.BannerObjView.as_view()),
+    path('info', views.InfoView.as_view()),
+    path('info/<int:pk>/', views.InfoObjView.as_view()),
+    path('cell', views.CellView.as_view()),
+    path('cell/<int:pk>/', views.CellObjView.as_view()),
 ]

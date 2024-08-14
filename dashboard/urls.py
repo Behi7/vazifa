@@ -13,7 +13,6 @@ urlpatterns = [
     path('deletecell/<int:id>/', views.deletecell, name ='deletecell'),
     path('createcell', views.createcell, name='createcell'),
     path('updatecell/<int:id>/', views.updatecell, name='updatecell'),
-    path('list/', include('api.urls')),
     path('infocell', views.cell, name='cell'),
     path('infolist', views.info, name='info'),
     path('bannerlist', views.banner, name='banner'),
